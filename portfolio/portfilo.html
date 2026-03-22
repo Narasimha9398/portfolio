@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narasimha Portfolio</title  >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'poppins','sans-serif';
+        box-sizing: border-box;
+    }
+    body{
+        background: #0B1220;
+        color: #fff;
+        padding-top: 70px; /* or the height of your nav bar */
+    }
+
+
+
+
+    /* HEADER SECTION */
+    #header {
+        width: 100%;
+        height: 100vh;
+        background-color: #0b0f19;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+        padding: 10px 10%;
+    }
+
+    /* NAVBAR (MechVision style) */
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 10%;
+        z-index: 1000;
+
+        background-color:none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* LOGO */
+    .logo {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+
+    .logo span {
+        color: #7ab7ff;  /* Blue .io style */
+    }
+
+    /* NAV MENU */
+    nav ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+    }
+
+    /* underline hover effect */
+    nav ul li a::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        background: #7ab7ff;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.4s;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    /* HEADER TEXT */
+    .header-text {
+        margin-top: 150px; /* better for fixed navbar */
+        color: white;
+        font-size: 30px;
+    }
+
+    .header-text h1 {
+        font-size: 60px;
+        margin-top: 20px;
+    }
+
+    .header-text h1 span {
+        color: #7ab7ff;
+    }
+
+    .header-text h3 {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    /* BUTTON */
+    .btn {
+        display: inline-block;
+        background: #ff3c3c;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        margin-top: 1rem;
+        border-radius: 5px;
+    }
+
+
+
+
+
+
+
+
+
+
+    /* ---------About--------- */
+    #about{
+    padding: 80px 0;
+    color: rgba(248, 248, 248, 0.737);
+    animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Row Animation */
+    .row{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        animation: slideUp 1.2s ease-in-out;
+    }
+
+    /* Left Column (Image) */
+    .about-col-1{
+        flex-basis: 35%;
+        animation: slideLeft 1.3s ease;
+    }
+
+    .about-col-1 img{
+        width: 100%;
+        border-radius: 15px;
+        transform: scale(0.9);
+        transition: 0.5s ease;
+    }
+
+    .about-col-1 img:hover{
+        transform: scale(1);
+    }
+
+    /* Right Column (Content) */
+    .about-col-2{
+        flex-basis: 60%;
+        animation: slideRight 1.3s ease;
+    }
+
+    .about-col-2 p{
+        font-size: 20px;
+        font-style: normal;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Title Animation */
+    .sub-title{
+        font-size: 80px;
+        font-weight: 600;
+        color: #fff;
+        animation: popIn 1s ease;
+    }
+
+    /* Button Animation */
+    .btn {
+        display: inline-block;
+        background: #ff3c3c;
+        color: white;
+        font-size: 25px;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        margin-top: 1rem;
+        border-radius: 10px;
+        transition: 0.4s ease;
+        animation: fadeInUp 1.3s ease;
+    }
+
+    .btn:hover{
+        background: #ff5f5f;
+        transform: translateY(-5px);
+    }
+
+    /* ------------------------
+        ANIMATIONS
+    -------------------------*/
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+        from {opacity:0; transform: translateY(40px);}
+        to {opacity:1; transform: translateY(0);}
+    }
+
+    @keyframes slideLeft {
+        from {opacity:0; transform: translateX(-50px);}
+        to {opacity:1; transform: translateX(0);}
+    }
+
+    @keyframes slideRight {
+        from {opacity:0; transform: translateX(50px);}
+        to {opacity:1; transform: translateX(0);}
+    }
+
+    @keyframes popIn {
+        0% {transform: scale(0.6); opacity: 0;}
+        100% {transform: scale(1); opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+        from {opacity:0; transform: translateY(20px);}
+        to {opacity:1; transform: translateY(0);}
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* ----------Education-------- */
+
+    /* Main Section */
+    #Qualification{
+        padding: 80px 0;
+        color: #ababab;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Title */
+    .title {
+        text-align: center;
+        font-size: 55px;
+        margin-bottom: 60px;
+        color: white;
+        animation: popIn 1.2s ease;
+    }
+
+    .title span {
+        display: block;
+        font-size: 14px;
+        color: rgb(195, 7, 7);
+        margin-top: 5px;
+        letter-spacing: 2px;
+        animation: fadeInUp 1.4s ease;
+    }
+
+    /* Timeline Container */
+    .timeline-container {
+        position: relative;
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px 0;
+        animation: slideUp 1.2s ease;
+    }
+
+    /* Timeline Line */
+    .timeline-container::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background: #57576e;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: growLine 2s ease;
+    }
+
+    /* Timeline Items */
+    .timeline-item {
+        padding: 20px 40px;
+        position: relative;
+        width: 50%;
+        opacity: 0;
+        animation: fadeItem 2.5s forwards ease;
+    }
+
+    .timeline-item:nth-child(odd) {
+        animation-delay: 0.4s;
+    }
+    .timeline-item:nth-child(even) {
+        animation-delay: 0.7s;
+    }
+
+    /* Timeline Dots */
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 1;
+        animation: pulse 2s infinite ease;
+    }
+
+    /* Left Items */
+    .timeline-item.left {
+        left: 0;
+        text-align: right;
+        animation-name: slideLeftItem;
+    }
+
+    .timeline-item.left::before {
+        right: -8px;
+    }
+
+    /* Right Items */
+    .timeline-item.right {
+        left: 50%;
+        text-align: left;
+        animation-name: slideRightItem;
+    }
+
+    .timeline-item.right::before {
+        left: -8px;
+    }
+
+    /* Content Box */
+    .timeline-item .content {
+        background: #6e6d84;
+        padding: 20px;
+        color: white;
+        border-radius: 8px;
+        transition: 0.4s ease;
+    }
+
+    .timeline-item .content:hover {
+        transform: translateY(-5px);
+        background: #528293;
+    }
+
+    /* Content Text */
+    .timeline-item .year {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .timeline-item .content h2 {
+        color: #fff;
+        margin-bottom: 5px;
+    }
+
+    .timeline-item .content .location {
+        color: rgb(166, 232, 196);
+        font-size: 16.5px;
+        margin-bottom: 10px;
+    }
+
+    .timeline-item .content p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #adabab;
+    }
+
+    /* -----------------------
+        ANIMATIONS
+    ----------------------- */
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes popIn {
+        0% {transform: scale(0.6); opacity: 0;}
+        100% {transform: scale(1); opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+        from {opacity: 0; transform: translateY(30px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideUp {
+        from {opacity: 0; transform: translateY(60px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideLeftItem {
+        from {opacity: 0; transform: translateX(-80px);}
+        to {opacity: 1; transform: translateX(0);}
+    }
+
+    @keyframes slideRightItem {
+        from {opacity: 0; transform: translateX(80px);}
+        to {opacity: 1; transform: translateX(0);}
+    }
+
+    @keyframes growLine {
+        from {height: 0;}
+        to {height: 100%;}
+    }
+
+    @keyframes pulse {
+        0% {transform: scale(1);}
+        50% {transform: scale(1.3); background: red;}
+        100% {transform: scale(1);}
+    }
+
+    @keyframes fadeItem {
+        to {opacity: 1;}
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* -----projects------ */
+     /* PROJECT SLIDER MAIN */
+    .project-slider {
+        width: 100%;
+        padding: 50px 0;
+        background: #0B1220;
+        color: white;
+        text-align: center;
+    }
+
+    .slider-title {
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+
+
+    .slider-container {
+        position: relative;
+        max-width: 900px;
+        margin: auto;
+    }
+
+
+    .slides {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+    }
+
+
+    .slide {
+        min-width: 100%;
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.8s ease;
+    }
+
+
+    .slide.active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* PROJECT CARD */
+    .project-card {
+        background: #444b72;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 0 25px rgba(255,255,255,0.05);
+    }
+    
+
+    iframe,
+    video {
+        width: 100%;
+        height: 380px;
+        border-radius: 12px;
+        background: #ddd;
+    }
+
+
+    .project-info {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+
+    .project-info h3 {
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+
+
+    .project-info p {
+        margin-top: 5px;
+        color: #cbd5e1;
+        line-height: 1.5;
+    }
+
+    /* NAV BUTTONS */
+    .slide-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 15px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        font-size: 22px;
+        background: #4d669b;
+        color: white;
+        transition: 0.3s ease;
+    }
+
+
+    .slide-btn:hover {
+        background: #ff8b3d;
+    }
+
+
+    .prev { left: -50px; }
+    .next { right: -50px; }
+
+
+    /* DOTS */
+    .dots {
+        margin-top: 20px;
+    }
+
+
+    .dots button {
+        width: 12px;
+        height: 12px;
+        background: #0fcf2c;
+        border: none;
+        margin: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+
+    .dots button.active {
+        background: #a54f15;
+    }
+
+
+
+    /* view projects */
+    .popup-gallery {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+
+    /* POPUP BOX */
+    .popup-box {
+        background: #7b9eab;
+        padding: 20px;
+        width: 90%;
+        max-width: 800px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+
+    /* CLOSE BUTTON */
+    .close-btn {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+
+    /* IMAGES GRID */
+    .gallery-grid {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+
+    .gallery-grid img {
+        width: 100%;
+        border-radius: 8px;
+        border: 2px solid #ddd;
+    }
+
+
+    .open-gallery-btn,.project-link {
+        background: #0a66c2;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        margin: 30px;
+    }
+
+
+    .open-gallery-btn:hover {
+        background: #004c99;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* -------skils------ */
+    .skills-section {
+    padding: 70px 0;
+    
+    background: #0B1220;
+    }
+
+    .skills-title {
+        color: white;
+        font-size: 45px;
+        margin-bottom: 40px;
+        text-align: center;
+        padding-left: 40px;
+        position: relative;
+    }
+
+    /* .skills-title span {
+        display: block;
+        width: 120px;
+        height: 3px;
+        background: linear-gradient(to right, #ff4500, transparent);
+        margin-top: 5px;
+    } */
+
+    .skills-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .skill-card {
+        background: rgb(80, 113, 121);
+        padding: 25px 35px;
+        border-radius: 14px;
+        width: 170px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(230, 205, 205, 0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-18px);
+        box-shadow: 0 0 20px rgba(16, 106, 42, 0.3);
+    }
+
+    .skill-card img {
+        width: 50px;
+        margin-bottom: 12px;
+    }
+
+    .skill-card p {
+        color: #cdd3df;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+
+
+
+
+
+
+    
+    /* ______contact____ */
+
+    #contact {
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    }
+
+    .section-title {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    .section-subtext {
+        font-size: 18px;
+        color: #bbbbbb;
+        margin-bottom: 50px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+    }
+
+    .contact-container {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    /* Form Box */
+    .contact-form {
+        flex-basis: 55%;
+        background: #515f7e;
+        padding: 30px;
+        
+        border-radius: 12px;
+        box-shadow: 0px 0px 20px rgba(99, 30, 30, 0.5);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 18px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background: #353d47;
+        color: rgb(254, 244, 244);
+        font-size: 16px;
+    }
+
+    .contact-form textarea {
+        height: 150px;
+        resize: none;
+    }
+
+    .send-btn {
+        width: 100%;
+        padding: 14px;
+        background: #16d19a;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .send-btn:hover {
+        background: #12bd88;
+    }
+
+    /* Right Side Contact Info */
+    .contact-info {
+        flex-basis: 35%;
+        text-align: left;
+    }
+
+    .contact-info h3 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #16d19a;
+    }
+
+    .contact-info p {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .contact-info i {
+        margin-right: 10px;
+        color: #16d19a;
+    }
+
+    /* Social Icons */
+    .social-icons a {
+        color: white;
+        font-size: 28px;
+        margin-right: 18px;
+        transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: #e4f0ec;
+    }
+/* 
+    /* --------Certification--------- */
+
+
+</style>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Narasimha<span> GOSU</span></div>
+                <ul class="nav-links">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#qualification">Qualification</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-text">
+                <p>Hello, I'm</p>
+                <h1>Laxminarasimha Gosu</h1>
+                <h3>Graduate in Mechanical Engineering</h3>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- ------------about----------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>I am a motivated Mechanical Engineering graduate specializing in mechanical design and CAD tools like AutoCAD, SolidWorks, CATIA, and Fusion 360. With hands-on experience in designing and fabricating mechanical projects, I am passionate about creating efficient and innovative engineering solutions. In addition to my core engineering skills, I have developed software proficiency in Python and full-stack development, enabling me to bring a modern, tech-savvy approach to engineering challenges. I am eager to contribute my mechanical design expertise to a dynamic engineering team and grow my career as a Mechanical Design Engineer.</p>
+                    
+                    <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- -------skils------ -->
+
+    <section id="skills" class="skills-section">
+        <h2 class="skills-title">Skills & Toolset <span></span></h2>
+
+        <div class="skills-container">
+            <div class="skill-card">
+                <img src="autocad.svg" alt="">
+                <p>AutoCAD</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="hackthebox.svg" alt="">
+                <p>SolidWorks</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="fortran.svg" alt="">
+                <p>Fusion 360</p>
+            </div>
+
+            <div class="skill-card">
+                <img src="dassaultsystemes.svg" alt="">
+                <p>Catia </p>
+            </div>
+            <div class="skill-card">
+                <img src="python.svg" alt="">
+                <p>Python (Scripting)</p>
+            </div>
+            
+
+            
+
+            <div class="skill-card">
+                <img src="hackthebox.svg" alt="">
+                <p>PTC Creo</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ----------- Education---------- -->
+    <div id="Qualification"></div>
+        <section class="timeline">
+            <h2 class="title">Qualification<span>My Educational Journey</span></h2>
+            <div class="timeline-container">
+
+                <!-- B.Tech -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h2>B.Tech in Mechanical Engineering</h2>
+                        <p class="location">Anurag University, Hyderabad</p>
+                        <p>Pursued Bachelor of Technology in Mechanical Engineering from <br>2020 to 2024 with a score of 6.45 GPA.</p>
+                    </div>
+                    <div class="year">2020-2024</div>
+                </div>
+                
+
+                <!-- Intermediate -->
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h2>Intermediate / MPC</h2>
+                        <p class="location">Sri Chaitanya Junior College, Khammam</p>
+                        <p>Completed MPC stream in Intermediate Education during <br>2018 - 2020 with a score of 847/1000.</p>
+                    </div>
+                    <div class="year">2018-2020</div>
+                </div>
+
+                <!-- SSC -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h2>SSC</h2>
+                        <p class="location">Z.P. High School, Garikapadu</p>
+                        <p>Completed Secondary School Certificate in 2018 with a score of <br> 6.7 GPA.</p>
+                    </div>
+                    <div class="year">2018</div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    
+    <!-- PROJECTS -->
+     <section class="project-slider">
+        <h2 class="slider-title">Projects</h2>
+
+
+        <div class="slider-container">
+
+
+            <!-- LEFT BUTTON -->
+            <button class="slide-btn prev">&#10094;</button>
+            <!-- SLIDES -->
+            <div class="slides">
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="project-card">
+                        <iframe
+                            title="Nissan GTR"
+                            frameborder="0"
+                            allowfullscreen
+                            mozallowfullscreen="true"
+                            webkitallowfullscreen="true"
+                            src="Screenshot 2025-11-21 234720.png">
+                        </iframe>
+
+
+                        <div class="project-info">
+                            <h3>Footstep Energy Generator by Using Piezoelectric Technology</h3>
+                            <p>This project converts walking pressure into electrical energy using piezoelectric sensors. The generated power is rectified, stored, and used for small devices, showcasing sustainable engineering for high-footfall public areas.</p>
+                            
+
+                            <!-- BUTTON shows 5–9 images in fullscreen -->
+                            <!-- VIEW BUTTON -->
+
+                            <button class="open-gallery-btn">View Project →</button>
+                            <!-- POPUP GALLERY -->
+                            <div id="popupGallery" class="popup-gallery">
+                                <div class="popup-box">
+                                    <!-- CLOSE BUTTON -->
+                                    <span id="closePopup" class="close-btn">&times;</span>
+                                    <h2>Project Information Images</h2>
+                                    <!-- IMAGE GRID -->
+                                    <div class="gallery-grid">
+                                        <img src="download.jpeg">
+                                        <img src="Download 3D Bootstrap Programming Framework Logo.jpeg">
+                                        <img src="python.jpeg">
+                                        <img src="html.jpeg">
+                                        <img src="solidworks.jpeg">
+                                        <img src="Futuristic Tech Hexagon Pattern Wallpaper for Innovation.jpeg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT BUTTON -->
+            <button class="slide-btn next">&#10095;</button>
+        </div>
+        
+        <!-- PAGINATION DOTS -->
+        <div class="dots">Hello</div>
+
+    </section>
+    
+
+
+
+    <!-- ----------Contact--------- -->
+    <section id="contact">
+        <h2 class="section-title">Let's Contact</h2>
+        <p class="section-subtext">
+            I'm always open to discussing new projects, collaborations, or 
+            opportunities in the mechanical engineering field.  
+            Feel free to contact me using the form or directly.
+        </p>
+
+        <div class="contact-container">
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <input type="text" placeholder="Your Phone Number (Optional)">
+                <input type="text" placeholder="Subject">
+                <textarea placeholder="Your Message"></textarea>
+                <button class="send-btn">Send Message 🚀</button>
+            </div>
+
+            <!-- Direct Contact Info -->
+            <div class="contact-info">
+                <h3>Direct Contact</h3>
+
+                <p><i class="fa-solid fa-envelope"></i> narasimhagosu1946@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +91 9398143551</p>
+                <p><i class="fa-solid fa-location-dot"></i> Hyderabad, India</p>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const popup = document.getElementById("popupGallery");
+        const openBtn = document.querySelector(".open-gallery-btn");
+        const closeBtn = document.getElementById("closePopup");
+
+
+        // OPEN POPUP
+        openBtn.addEventListener("click", () => {
+            popup.style.display = "flex";
+        });
+
+
+        // CLOSE POPUP
+        closeBtn.addEventListener("click", () => {
+            popup.style.display = "none";
+        });
+
+
+        // CLOSE WHEN CLICK OUTSIDE POPUP BOX
+        window.addEventListener("click", (e) => {
+            if (e.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+
+    </script>
+
+</body>
+</html>
